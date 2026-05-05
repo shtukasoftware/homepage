@@ -1,17 +1,59 @@
 ---
-
+const name = "Shtuka Software";
+const tagline = "Simple apps and games";
+const links = [{ name: "GitHub", url: "https://github.com/shtukasoftware" }];
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Shtuka</title>
+    <title>{name}</title>
   </head>
   <body>
-    <h1>Shtuka</h1>
+    <main>
+      <h1>{name}</h1>
+      <p>{tagline}</p>
+
+      <nav>
+        {links.map((link) => <a href={link.url}>{link.name}</a>)}
+      </nav>
+    </main>
   </body>
 </html>
+
+<style>
+  body {
+    font-family: system-ui, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0a0a0a;
+    color: #e0e0e0;
+  }
+  main {
+    max-width: 500px;
+    padding: 2rem;
+  }
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  p {
+    color: #888;
+    margin-bottom: 2rem;
+  }
+  nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+  a {
+    color: #6ea8fe;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
